@@ -1,15 +1,15 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: bootpress-service
+  name: botpress-service
   namespace: default
 spec:
-  type: NodePort
+  #type: NodePort
+  selector:
+    app: botpress
   ports:
     - protocol: TCP
       port: 3000
-      targetPort: 3000
-      nodePort: 30000
-      name: http
-  selector:
-    app: botpress
+      #targetPort: 3000
+      #nodePort: 30000
+      name: http  

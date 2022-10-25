@@ -16,20 +16,13 @@ spec:
         app: botpress
     spec:
       initContainers:
-      - name: postgres
+      - name: wait-for-postgresdb-connection
         image: postgres:9.6.5
         ports:
           - containerPort: 5432
         command:  ["sh", "-c", 
         "until pg_isready -h postgres-service.default -p 5432; 
-          do echo waiting for database; sleep 2; done;"] 
-        env:
-        - name: POSTGRES_PASSWORD
-          value: "mysecretpassword"             
-        - name: POSTGRES_USER
-          value: "admin"             
-        - name: POSTGRES_DB
-          value: "botpress"             
+          do echo waiting for database; sleep 2; done;"]                      
       containers:
       - name: botpress
         image: botpress-cicd
@@ -48,4 +41,4 @@ spec:
         - name: DATABASE_URL
           value: "postgres://admin:mysecretpassword@postgres-service.default:5432/botpress"       
         - name: EXTERNAL_URL
-          value: "http://localhost:30000"                  
+          value: "https://demo.localdev.me/botpress"                          

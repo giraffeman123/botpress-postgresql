@@ -14,8 +14,8 @@ spec:
       paths:
       - backend:
           service:
-            name: bootpress-service
+            name: botpress-service
             port:
-              number: 80
+              number: 3000
         path: /botpress
         pathType: Prefix
