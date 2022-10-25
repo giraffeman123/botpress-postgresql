@@ -50,7 +50,7 @@
   "pipeline_status": {
     "current_stage": {
       "id": "prod",
-      "promoted_on": "2022-10-22T00:01:30.708Z",
+      "promoted_on": "2022-10-25T18:27:40.421Z",
       "promoted_by": "system"
     }
   }

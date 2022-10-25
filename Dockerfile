@@ -1,4 +1,5 @@
 FROM botpress/server:v12_10_6
+#FROM botpress/server
 
 RUN apt-get update
 RUN apt-get install -y jq curl

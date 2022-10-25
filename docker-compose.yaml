@@ -23,8 +23,8 @@ services:
     environment:
       BPFS_STORAGE: database
       AUTO_MIGRATE: "true" 
-      CI_EMAIL: prueba@gmail.com
-      CI_PASSWORD: hola1234
+      CI_EMAIL: eduardo.elliot.martinez.palomino@uabc.edu.mx
+      CI_PASSWORD: "!Hola1234"
       DATABASE_URL: postgres://admin:mysecretpassword@postgress:5432/botpress
     depends_on:
       - db
