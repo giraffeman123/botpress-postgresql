@@ -9,4 +9,4 @@ ENTRYPOINT ["/botpress/entrypoint.sh"]
 COPY entrypoint.sh /botpress/entrypoint.sh
 COPY sync.sh /botpress/sync.sh
 COPY waitup.sh /botpress/waitup.sh
-COPY data /botpress/data
+COPY data/ /botpress/data
