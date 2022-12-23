@@ -1,4 +1,4 @@
-FROM botpress/server:v12_10_6
+FROM botpress/server:v12_29_1
 #FROM botpress/server
 
 RUN apt-get update
