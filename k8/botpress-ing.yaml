@@ -4,12 +4,12 @@ metadata:
   name: botpress
   namespace: default
 spec:
-  ingressClassName: nginx
+  ingressClassName: nginx-default
   tls:
     - hosts:
-        - demo.localdev.me
+        - cimabot.uabc.edu.mx
   rules:
-  - host: demo.localdev.me
+  - host: cimabot.uabc.edu.mx
     http:
       paths:
       - backend:

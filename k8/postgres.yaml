@@ -20,6 +20,9 @@ spec:
         image: postgres:alpine3.17
         ports:
           - containerPort: 5432
+        volumeMounts:
+          - mountPath: /var/lib/postgresql/data
+            name: pv-storage
         env:
         - name: POSTGRES_PASSWORD
           value: "mysecretpassword"             
@@ -27,3 +30,7 @@ spec:
           value: "admin"             
         - name: POSTGRES_DB
           value: "botpress"    
+      volumes:
+      - name: pv-storage
+        persistentVolumeClaim:
+          claimName: nfs-postgresql-pvc

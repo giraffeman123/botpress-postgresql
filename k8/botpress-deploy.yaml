@@ -26,9 +26,12 @@ spec:
       containers:
       - name: botpress
         image: botpress/server:v12_29_1
-        imagePullPolicy: Never
+        imagePullPolicy: Always
         ports:
           - containerPort: 3000
+        volumeMounts:
+          - mountPath: /botpress/data
+            name: pv-storage
         env:
         - name: BPFS_STORAGE
           value: "database"        
@@ -41,4 +44,8 @@ spec:
         - name: DATABASE_URL
           value: "postgresql://admin:mysecretpassword@postgres-service.default:5432/botpress"       
         - name: EXTERNAL_URL
-          value: "https://demo.localdev.me/botpress"                          
+          value: "https://cimabot.uabc.edu.mx/botpress"                          
+      volumes:
+      - name: pv-storage
+        persistentVolumeClaim:
+          claimName: nfs-botpress-pvc

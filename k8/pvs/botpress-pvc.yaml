@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: nfs-botpress-pvc
+  namespace: default
+spec:
+  storageClassName: nfs-botpress
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 10Gi

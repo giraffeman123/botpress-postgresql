@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-using-nfs
+  namespace: default
+spec:
+  containers:
+    - name: app
+      image: alpine
+      volumeMounts:
+      - name: data
+        mountPath: /var/nfs
+      command: ["/bin/sh"]
+      args: ["-c", "sleep 500000"]
+  volumes:
+  - name: data
+    persistentVolumeClaim:
+      claimName: nfs-botpress-pvc
+
