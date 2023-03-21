@@ -17,7 +17,7 @@ spec:
     spec:
       initContainers:
       - name: wait-for-postgresdb-connection
-        image: postgres:9.6.5
+        image: postgres:alpine3.17
         ports:
           - containerPort: 5432
         command:  ["sh", "-c", 
@@ -25,7 +25,7 @@ spec:
           do echo waiting for database; sleep 2; done;"]                      
       containers:
       - name: botpress
-        image: botpress-cicd
+        image: botpress/server:v12_29_1
         imagePullPolicy: Never
         ports:
           - containerPort: 3000
@@ -39,6 +39,6 @@ spec:
         - name: CI_PASSWORD
           value: "hola1234"                  
         - name: DATABASE_URL
-          value: "postgres://admin:mysecretpassword@postgres-service.default:5432/botpress"       
+          value: "postgresql://admin:mysecretpassword@postgres-service.default:5432/botpress"       
         - name: EXTERNAL_URL
           value: "https://demo.localdev.me/botpress"                          

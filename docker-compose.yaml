@@ -4,19 +4,24 @@ version: '3.1'
 services:
 
   db:
-    image: postgres
-    container_name: postgress
+    image: postgres:alpine3.17
+    container_name: postgresql
     restart: always
     ports:
       - 8080:5432
+    volumes:
+      - ./postgresql-mount:/var/lib/postgresql/data
     environment:
       POSTGRES_PASSWORD: mysecretpassword
       POSTGRES_USER: admin
       POSTGRES_DB: botpress
 
   botpress:
-    image: botpress-cicd
+    image: botpress/server:v12_29_1
     container_name: botpress
+    #build:
+    #  context: ./
+    #  dockerfile: Dockerfile
     restart: always
     ports:
       - 3000:3000
@@ -25,6 +30,8 @@ services:
       AUTO_MIGRATE: "true" 
       CI_EMAIL: eduardo.elliot.martinez.palomino@uabc.edu.mx
       CI_PASSWORD: "!Hola1234"
-      DATABASE_URL: postgres://admin:mysecretpassword@postgress:5432/botpress
+      DATABASE_URL: postgresql://admin:mysecretpassword@postgresql:5432/botpress
+    volumes:
+      - ./data:/botpress/data
     depends_on:
       - db

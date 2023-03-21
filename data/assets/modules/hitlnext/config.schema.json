@@ -37,8 +37,7 @@
     "transferMessage": {
       "default": {
         "en": "You are being transferred to an agent.",
-        "fr": "Vous êtes transféré à un agent.",
-        "es": "Se le está transfiriendo a un agente."
+        "fr": "Vous êtes transféré à un agent."
       },
       "type": "object",
       "additionalProperties": {
@@ -48,8 +47,7 @@
     "assignMessage": {
       "default": {
         "en": "You have been assigned to our agent {{agentName}}.",
-        "fr": "Vous avez été assigné à notre agent(e) {{agentName}}.",
-        "es": "Ha sido asignado al agente {{agentName}}."
+        "fr": "Vous avez été assigné à notre agent(e) {{agentName}}."
       },
       "type": "object",
       "additionalProperties": {
