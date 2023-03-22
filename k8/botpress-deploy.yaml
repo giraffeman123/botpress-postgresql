@@ -38,13 +38,13 @@ spec:
         - name: AUTO_MIGRATE
           value: "true"                  
         - name: CI_EMAIL
-          value: "prueba@gmail.com"                  
+          value: "test@gmail.com"                  
         - name: CI_PASSWORD
-          value: "hola1234"                  
+          value: "!Hola1234"                  
         - name: DATABASE_URL
           value: "postgresql://admin:mysecretpassword@postgres-service.dit:5432/botpress"       
         - name: EXTERNAL_URL
-          value: "https://cimabot.uabc.edu.mx/botpress"                          
+          value: "https://demo.localdev.me/botpress"                          
       volumes:
       - name: pv-storage
         persistentVolumeClaim:

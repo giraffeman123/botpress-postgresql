@@ -14,5 +14,5 @@ spec:
   #- hard
   #- nfsvers=4.0
   nfs:
-    path: /var/nfs/botpress/data
-    server: 148.231.10.217
+    path: /your-nfs-botpress-data-path
+    server: 127.0.0.1

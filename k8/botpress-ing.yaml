@@ -7,9 +7,9 @@ spec:
   ingressClassName: nginx-default
   tls:
     - hosts:
-        - cimabot.uabc.edu.mx
+        - demo.localdev.me
   rules:
-  - host: cimabot.uabc.edu.mx
+  - host: demo.localdev.me
     http:
       paths:
       - backend:
