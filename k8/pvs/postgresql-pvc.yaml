@@ -2,7 +2,7 @@ apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: nfs-postgresql-pvc
-  namespace: default
+  namespace: dit      
 spec:
   storageClassName: nfs-postgresql
   accessModes:

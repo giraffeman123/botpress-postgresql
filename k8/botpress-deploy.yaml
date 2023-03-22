@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: botpress-deployment-prueba
-  namespace: default
+  namespace: dit
   labels:
     app: botpress
 spec:
@@ -21,7 +21,7 @@ spec:
         ports:
           - containerPort: 5432
         command:  ["sh", "-c", 
-        "until pg_isready -h postgres-service.default -p 5432; 
+        "until pg_isready -h postgres-service.dit -p 5432; 
           do echo waiting for database; sleep 2; done;"]                      
       containers:
       - name: botpress
@@ -42,7 +42,7 @@ spec:
         - name: CI_PASSWORD
           value: "hola1234"                  
         - name: DATABASE_URL
-          value: "postgresql://admin:mysecretpassword@postgres-service.default:5432/botpress"       
+          value: "postgresql://admin:mysecretpassword@postgres-service.dit:5432/botpress"       
         - name: EXTERNAL_URL
           value: "https://cimabot.uabc.edu.mx/botpress"                          
       volumes:

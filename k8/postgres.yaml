@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: postgres-deployment-prueba
-  namespace: default
+  namespace: dit
   labels:
     app: postgres
 spec:
